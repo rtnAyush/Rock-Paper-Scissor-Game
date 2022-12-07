@@ -108,12 +108,13 @@ h1 {
 }
 
 /* step 1 interface */
-.svg-bg{
+.svg-bg {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
+
 .step-1 {
     position: relative;
     /* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000' stroke-width='15' fill='none' opacity='.2' d='M156.5 262 300 8H13z'/%3E%3C/svg%3E") bottom center; */
@@ -174,6 +175,7 @@ h1 {
 
 #text-win-lose {
     text-align: center;
+    transition: 200ms step-end;
 }
 
 .result-text {
@@ -206,11 +208,16 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 200ms ease-in-out;
-    z-index: 10;
     opacity: 0;
+    z-index: -1;
+}
+
+.model:hover{
+    background-color: #fff;
 }
 
 .model.active {
+    z-index: 10;
     opacity: 1;
 }
 
@@ -242,14 +249,16 @@ h1 {
 }
 
 /* footer section */
+
 #rule {
     border: 1px solid rgba(255, 255, 255, 0.548);
     border-radius: 5px;
+    cursor: pointer;
     position: fixed;
-    right: 10px;
     font-size: 10px;
     padding: 5px 25px;
-    cursor: pointer;
+    right: 10%;
+    bottom: 10%;
 }
 
 #rule:hover {
@@ -258,8 +267,13 @@ h1 {
 }
 
 .attribution {
+    position: fixed;
+    margin: auto;
+    /* right: 10%; */
+    bottom: 5%;
     font-size: 11px;
     text-align: center;
+    transform: translateX(50%);
 }
 
 .attribution a {
