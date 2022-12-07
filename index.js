@@ -1,6 +1,7 @@
 var box = ["paper", "scissor", "rock"];
 var userChoice = document.querySelectorAll(".forUser");
 var comChoice = document.querySelectorAll(".forCom");
+var userChoice1 = document.querySelectorAll(".icon-img");
 
 var score = 0;
 
@@ -52,10 +53,18 @@ document.querySelector("#text-win-lose .btn").addEventListener("click", function
 userChoice.forEach(element => element.addEventListener("click", function (event) {
 
     var value = event.path[0].id;
+
     startGame(value);
 
-    console.log(value);
 }));
+
+// userChoice1.forEach(element => element.addEventListener("click", function (event) {
+
+//     var value = event.path[0].id;
+//     startGame(value);
+
+//     console.log(value);
+// }));
 
 
 function startGame(value) {
