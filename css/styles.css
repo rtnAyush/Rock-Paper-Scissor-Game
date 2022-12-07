@@ -50,9 +50,7 @@ h1 {
     display: inline-block;
     width: 12.5rem;
     height: 12.5rem;
-    /* border: 10px transparent; */
     border: 15px solid transparent;
-    border-image-slice: 1;
     border-radius: 100%;
     box-shadow: inset 1px 5px hsl(225, 5%, 67%);
 }
@@ -84,9 +82,14 @@ h1 {
 }
 
 .icon-img {
+    /* background-color: black; */
     position: absolute;
-    left: 34%;
-    top: 32%;
+    left: 29%;
+    top: 31%;
+}
+
+img {
+    width: 5rem;
 }
 
 .icon-img-2 {
