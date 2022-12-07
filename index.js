@@ -4,6 +4,7 @@ var box = ["paper", "scissor", "rock"];
 var userChoice = document.querySelectorAll(".forUser");
 var comChoice = document.querySelectorAll(".forCom");
 
+var started = false;
 // for pop up 
 document.querySelector("#rule").addEventListener("click", function () {
 
@@ -25,10 +26,34 @@ document.querySelector("#overlayer").addEventListener("click", function () {
 });
 
 
+document.querySelector(".btn").addEventListener("click", function () {
+
+    console.log("BTTON");
+    for (let i = 0; i < 3; i++) {
+        userChoice[i].classList.remove("disabled");
+
+        userChoice[i].classList.add("circle-size-1");
+        userChoice[i].classList.add(box[i] + "-pos");
+        document.querySelectorAll(".icon-img-1")[i].classList.add("icon-img");
+    }
+    document.querySelector(".svg-bg").style.display = "block";
+
+
+    document.querySelector("#mid-area").classList.remove("step-3");
+    document.querySelector("#mid-area").classList.add("step-1");
+
+    document.querySelector(".who-picked").classList.add("disabled");
+    // document.querySelector("#" + value).classList.remove("disabled");
+    // document.querySelector("#" + value).classList.add("circle-size-2");
+
+    // document.querySelector(".dark-cir").classList.remove("disabled");
+
+});
+
+
 userChoice.forEach(element => element.addEventListener("click", function (event) {
 
     var value = event.path[0].id;
-
     startGame(value);
 
     console.log(value);
@@ -36,34 +61,41 @@ userChoice.forEach(element => element.addEventListener("click", function (event)
 
 
 function startGame(value) {
-    var choice;
+    if (!started) {
 
-    // step-1
-    userPicked(value);
+        started = false;
+        var choice;
 
-    // step-2
-    setTimeout(function () {
-        choice = comPicked();
+        // step-1
+        userPicked(value);
 
-    }, 3000);
+        // step-2
+        setTimeout(function () {
+            choice = comPicked();
 
-    // step-3
-    setTimeout(function () {
-        console.log("step3->" + value + " " + choice);
-        checkWinner(value, choice);
+        }, 3000);
 
-    }, 3000);
-    // console.log("step4");
-    return;
+        // step-3
+        setTimeout(function () {
+            console.log("step3->" + value + " " + choice);
+            checkWinner(value, choice);
+
+        }, 3000);
+        started = true;
+    }
 }
 
 function userPicked(value) {
+
     for (let i = 0; i < 3; i++) {
         userChoice[i].classList.add("disabled");
         userChoice[i].classList.remove("circle-size-1");
         userChoice[i].classList.remove(box[i] + "-pos");
         document.querySelectorAll(".icon-img")[i].classList.add("icon-img-2");
     }
+    document.querySelector(".svg-bg").style.display = "none";
+
+
     document.querySelector("#mid-area").classList.remove("step-1");
     document.querySelector("#mid-area").classList.add("step-2");
 
