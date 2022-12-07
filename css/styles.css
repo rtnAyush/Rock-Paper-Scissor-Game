@@ -69,7 +69,7 @@ h1 {
     height: 18.75rem;
     border: 15px solid;
     border-radius: 100%;
-    transition: 500ms;
+    box-shadow: inset 1px  3px hsl(229, 25%, 31%);
 }
 
 .dark-cir {
@@ -174,16 +174,16 @@ h1 {
 }
 
 .btn {
-    margin: 3%;
+    cursor: pointer;
     border-radius: 8px;
     color: hsl(214, 47%, 23%);
     background: #ffffff;
-    padding: 15px 40px 11px 40px;
+    padding: 1rem 4rem;
+    font-size: 1rem;
 }
 
 .btn:hover {
     color: rgba(255, 34, 0, 0.66);
-    text-decoration: none;
 }
 
 /* rule pop Up  */
@@ -276,20 +276,27 @@ h1 {
     }
 
     .step-3 {
+        flex-wrap: wrap;
         max-width: 90%;
+        gap: 20px;
     }
 
     .circle-size-2 {
-        width: 16rem;
-        height: 16rem;
+        width: 10rem;
+        height: 10rem;
     }
 
     #text-win-lose {
-        font-size: 1rem;
+        margin: auto;
+        order: 1;
     }
-
+    
+    .result-text{
+        font-size: 3rem;
+        
+    }
     .btn {
+        font-size: 1rem;
         color: hsl(214, 47%, 23%);
-        padding: 1rem 2rem;
     }
 }
