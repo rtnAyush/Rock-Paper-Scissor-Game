@@ -215,7 +215,7 @@ img {
     z-index: -1;
 }
 
-.model:hover{
+.model:hover {
     background-color: #fff;
 }
 
@@ -336,6 +336,10 @@ img {
 
     .step-2 {
         max-width: 90%;
+    }
+
+    img {
+        width: 3rem;
     }
 
     .icon-img {
