@@ -49,24 +49,6 @@ document.querySelector("#text-win-lose .btn").addEventListener("click", function
 
 });
 
-
-userChoice.forEach(element => element.addEventListener("click", function (event) {
-
-    var value = event.path[0].id;
-
-    startGame(value);
-
-}));
-
-// userChoice1.forEach(element => element.addEventListener("click", function (event) {
-
-//     var value = event.path[0].id;
-//     startGame(value);
-
-//     console.log(value);
-// }));
-
-
 function startGame(value) {
     if (!started) {
 
@@ -80,14 +62,14 @@ function startGame(value) {
         setTimeout(function () {
             choice = comPicked();
 
-        }, 3000);
+        }, 1000);
 
         // step-3
         setTimeout(function () {
             console.log("step3->" + value + " " + choice);
             checkWinner(value, choice);
 
-        }, 3000);
+        }, 1000);
         started = true;
     }
 }
@@ -156,4 +138,4 @@ function checkWinner(value1, value2) {
 function playSound(name) {
     var sound = new Audio("Sounds/" + name + ".mp3");
     sound.play();
-  }
+}

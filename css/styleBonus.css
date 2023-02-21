@@ -6,7 +6,7 @@ body {
 }
 
 * {
-    transition: 200ms ease;
+    transition: 500ms ease-in-out;
 }
 
 h3,
@@ -48,9 +48,9 @@ h1 {
     position: relative;
     background-color: white;
     display: inline-block;
-    width: 12.5rem;
-    height: 12.5rem;
-    border: 15px solid transparent;
+    width: 5rem;
+    height: 5rem;
+    border: 10px solid transparent;
     border-radius: 100%;
     box-shadow: inset 1px 5px hsl(225, 5%, 67%);
 }
@@ -82,19 +82,20 @@ h1 {
 }
 
 .icon-img {
+    /* background-color: black; */
     position: absolute;
-    left: 21%;
-    top: 17%;
+    left: 29%;
+    top: 31%;
 }
 
 img {
-    width: 7rem;
+    width: 3rem;
 }
 
 .icon-img-2 {
     position: absolute;
-    left: 32%;
-    top: 27%;
+    left: 40%;
+    top: 38%;
 }
 
 .paper-cir {
@@ -109,38 +110,65 @@ img {
     border-color: hsl(349, 71%, 52%);
 }
 
+.lizard-cir {
+    border-color: hsl(349, 71%, 52%);
+}
+
+.spock-cir {
+    border-color: hsl(349, 71%, 52%);
+}
+
 /* step 1 interface */
 .svg-bg {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform:
-        translate(-50%, -50%) scale(300%);
+    transform: translate(-50%, -50%);
 }
 
 .step-1 {
     position: relative;
+    /* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000' stroke-width='15' fill='none' opacity='.2' d='M156.5 262 300 8H13z'/%3E%3C/svg%3E") bottom center; */
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position-x: center;
+    background-position: 50% 50%; */
+
     margin: 3% auto;
     max-width: 40%;
     display: grid;
-    grid-template-columns: (2, 1fr);
+    grid-template-columns: (3, 1fr);
 }
 
-.paper-pos {
+
+.scissor-pos {
+    margin: auto;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.spock-pos {
     margin: auto;
     grid-column: 1;
     grid-row: 2;
 }
 
-.scissor-pos {
+.paper-pos {
     margin: auto;
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 2;
+}
+
+.lizard-pos {
+    margin: auto;
+    grid-column: 1;
+    grid-row: 3;
 }
 
 .rock-pos {
     margin: auto;
-    grid-column: 1/3;
+    grid-column: 3;
     grid-row: 3;
 }
 
